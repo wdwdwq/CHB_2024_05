@@ -8,20 +8,26 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class Tests {
 
     @Test
-    @DisplayName("1,2,3,4,5 => 5,4,3,2,1 ")
-    void t1() {
-        assertThat(new Solution().solution(new int[]{1,2,3,4,5})).isEqualTo(new int[]{5,4,3,2,1});
+    @DisplayName("예각 테스트")
+    void testAcute() {
+        assertThat(new Solution().solution(45)).isEqualTo(1);
     }
 
     @Test
-    @DisplayName("1, 1, 1, 1, 1, 2 => 2, 1, 1, 1, 1, 1 ")
-    void t2() {
-        assertThat(new Solution().solution(new int[]{1,1,1,1,1,2})).isEqualTo(new int[]{2, 1, 1, 1, 1, 1});
+    @DisplayName("직각 테스트")
+    void testRight() {
+        assertThat(new Solution().solution(90)).isEqualTo(2);
     }
 
     @Test
-    @DisplayName("1, 0, 1, 1, 1, 3, 5 => 5, 3, 1, 1, 1, 0, 1 ")
-    void t3() {
-        assertThat(new Solution().solution(new int[]{1, 0, 1, 1, 1, 3, 5})).isEqualTo(new int[]{5, 3, 1, 1, 1, 0, 1});
+    @DisplayName("둔각 테스트")
+    void testObtuse() {
+        assertThat(new Solution().solution(135)).isEqualTo(3);
+    }
+
+    @Test
+    @DisplayName("평각 테스트")
+    void testStraight() {
+        assertThat(new Solution().solution(180)).isEqualTo(4);
     }
 }

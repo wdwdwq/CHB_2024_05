@@ -4,34 +4,29 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] numbers1 = {1, 2, 3, 4, 5};
-        int[] numbers2 = {1, 1, 1, 1, 1, 2};
-        int[] numbers3 = {1, 0, 1, 1, 1, 3, 5};
-
         Solution solution = new Solution();
-        int [] result1 = solution.solution(numbers1);
-        int [] result2 = solution.solution(numbers2);
-        int [] result3 = solution.solution(numbers3);
-
-        System.out.println("numbers1의 뒤집은 배열: " + Arrays.toString(result1));
-        System.out.println("numbers2의 뒤집은 배열: " + Arrays.toString(result2));
-        System.out.println("numbers3의 뒤집은 배열: " + Arrays.toString(result3));
+        System.out.println("Angle 45: " + solution.solution(45));  // 1
+        System.out.println("Angle 90: " + solution.solution(90));  // 2
+        System.out.println("Angle 135: " + solution.solution(135)); // 3
+        System.out.println("Angle 180: " + solution.solution(180)); // 4
     }
 }
 
 
 class Solution {
-    public int[] solution(int[] num_list) {
-        int length = num_list.length; // 입력한 배열의 길이를 구한다
-        int[] answer = new int[length]; // 동일한 길이의 새로운 배열을 생성
-
-        // 입력 배열의 요소를 뒤집어 새로운 배열에 저장
-        for(int i = 0; i < length; i++){
-            answer[i] = num_list[length - 1 - i]; // 마지막 요소부터 차례로
+    public int solution(int angle) {
+        int answer = 0;
+        if(0 < angle && angle < 90) {
+            answer = 1;
+        } else if(angle == 90) {
+            answer = 2;
+        } else if(90 < angle && angle < 180) {
+            answer = 3;
+        } else {
+            answer = 4;
         }
-
-        return answer; // 뒤집어진 배열을 반환함
+        return answer;
     }
-}
 
+}
 
