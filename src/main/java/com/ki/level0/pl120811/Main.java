@@ -13,10 +13,13 @@ public class Main {
         System.out.println("array2의 중앙값: " + solution.solution(array2)); // 0
     }
 }
- class Solution {
+class Solution {
     public int solution(int[] array) {
+        int answer = 0;
         Arrays.sort(array);
-        int middleIndex = array.length / 2;
-        return array[middleIndex];
+
+        answer = array[array.length/2];
+
+        return answer;
     }
 }
